@@ -14,7 +14,7 @@ body {
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
-    margin-top: 63px;
+    margin-top: 55px;
 }
 .header-burger {
     display: none;
@@ -54,7 +54,7 @@ nav {
 .nav-login a {
     text-decoration: none;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 13px;
     line-height: 1.5;
     color: #FFFFFF;
     transform: scale(1);
@@ -94,7 +94,7 @@ nav {
 .main {
     display: flex;
     align-items: center;
-    margin-top: 57px;
+    margin-top: 45px;
 }
 .main_text {
     flex: 0 0 600px;
@@ -154,7 +154,7 @@ nav {
 /*-----------STATUS-----------*/
 .status {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     padding-top: 190px;
     padding-bottom: 181px;
@@ -195,7 +195,7 @@ nav {
 /*-----------CALC-----------*/
 .text {
     text-align: center;
-    padding-bottom: 61px;
+    padding-bottom: 65px;
 }
 .text_title {
     font-weight: 700;
@@ -211,7 +211,7 @@ nav {
 .calc_header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 840px;
     margin: 0 auto;
     background: #FBFCFE;
@@ -219,7 +219,7 @@ nav {
     padding: 47px 50px;
 }
 .calc_input {
-    font-size: 20px;
+    font-size: 16px;
     color: #0D0D2B;
     border: none;
     border-bottom: 2px solid #E0E0E0;
@@ -228,6 +228,18 @@ nav {
 }
 .calc_input:focus {
     outline: none;
+}
+.calc_input::-webkit-input-placeholder {
+    color: #0D0D2B;
+}
+.calc_input::-moz-placeholder {
+    color: #0D0D2B;
+}
+.calc_input:-ms-input-placeholder {
+    color: #0D0D2B;
+}
+.calc_input::-ms-input-placeholder {
+    color: #0D0D2B;
 }
 .calc_input::placeholder {
     color: #0D0D2B;
@@ -238,14 +250,16 @@ nav {
     border: none;
     border-bottom: 2px solid #E0E0E0;
     background: #fff;
-    appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
     flex: 0 0 200px;
     background-image: url(../img/arrow-section.svg);
     background-repeat: no-repeat;
     background-position: 98% 15px;
     padding: 10px 5px;
-    margin-right: 45px;
-    margin-left: 50px;
+    margin-right: 3rem;
+    margin-left: 3rem;
 }
 .calc_select:focus {
     outline: none;
@@ -427,6 +441,18 @@ nav {
     margin-right: 40px;
     width: 100%;
 }
+.form_message__input::-webkit-input-placeholder {
+    color: #FFFFFF;
+}
+.form_message__input::-moz-placeholder {
+    color: #FFFFFF;
+}
+.form_message__input:-ms-input-placeholder {
+    color: #FFFFFF;
+}
+.form_message__input::-ms-input-placeholder {
+    color: #FFFFFF;
+}
 .form_message__input::placeholder {
     color: #FFFFFF;
 }
@@ -464,8 +490,9 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0;
 }
-.footer_list__item {
+.footer_list__item:not(:last-child) {
     margin-right: 30px;
 }
 .footer_list__item:hover {
@@ -511,7 +538,7 @@ nav {
     background-color: transparent;
     cursor: pointer;
     position: absolute;
-    top: 60px;
+    top: 50px;
     right: 10px;
     transform: scale(1);
     transition: .2s ease transform;
@@ -539,23 +566,21 @@ nav {
         font-size: 32px;
     }
     .crypto {
-        flex-direction: column;
-        align-items: center;
         align-content: center;
         margin-top: 30px;
+        flex-wrap: wrap;
+        gap: 20px;
     }
     .crypto_item {
+        flex: 0 0 47%;
         padding: 30px 20px;
     }
-    .crypto_item:nth-child(2) {
-    margin: 30px 0;
+    .crypto_item:nth-child(3) {
+        flex: 0 0 100%;
     }
     .crypto_item__btn-icon {
         width: 45px;
         height: 45px;
-    }
-    .crypto_item__description {
-        max-width: 300px;
     }
     .form {
         flex-direction: column;
@@ -596,7 +621,8 @@ nav {
     }
 }
 @media (max-width: 812px) {
-    .header nav {
+    .header nav,
+    .main_img  {
         display: none;
     } 
     .header-burger{
@@ -637,8 +663,10 @@ nav {
     .nav-login {
         display: flex;
         justify-content: flex-end;
+        align-items: center;
         flex-grow: 1;
-        margin-right: 5%;
+        margin: 0;
+        margin-right: 2%;
         z-index: 2;
     }
     .nav {
@@ -649,5 +677,133 @@ nav {
     }
     .nav-item {
         margin: 0 0 15px 0;
+    }
+    .calc_header {
+        max-width: 540px;
+        border-radius: 16px 16px 0px 0px;
+        padding: 30px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .calc_input {
+        font-size: 16px;
+        flex-grow: 0;
+        margin-right: 10px;
+    }
+    .calc_select {
+        font-size: 16px;
+        padding: 10px 5px;
+        flex: 0 0 190px;
+    }
+    .calc-button {
+        font-size: 15px;
+        padding: 15px 20px;
+        margin: 20px auto 0;
+    }
+    .calc_footer {
+        max-width: 600px;
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+    .calc_footer_total {
+        font-size: 22px;
+        margin-top: 17px;
+        margin-bottom: 5px;
+    }
+    .status_item__icon {
+        flex: 0 0 60px;
+        width: 60px;
+        height: 60px;
+    }
+}
+@media (max-width: 667px) {
+    #modal {
+        padding: 80px 15px 20px;
+    }
+    .burger_close {
+        top: 23px;
+    }
+    .header {
+        margin-top: 30px;
+    }
+    .main_text__title {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+    .status {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 50px 0;
+    }
+    .main_text {
+        flex: 0 0 100%;
+    }
+    .calc_header {
+        justify-content: flex-start;
+    }
+    .calc_select {
+        margin-left: 0;
+    }
+    .footer {
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 15px 40px;
+    }
+}
+@media (max-width: 540px) {
+    .page_white__title {
+        text-align: left;
+    }
+    .crypto {
+        flex-direction: column;
+        margin: 30px 10px;
+    }
+}
+@media (max-width: 430px) {
+    .header-logo img {
+    width: 100px;
+    }
+    .nav-login::before {
+        left: 45px;
+    }
+    .nav-register {
+        margin-left: 15px;
+    }
+    .link-register {
+        padding: 7px 14px;
+    }
+    .main_text__title {
+        font-size: 30px;
+    }
+    .main_text__sale {
+        font-size: 13px;
+        padding: 8px 8px 8px 2px;
+        margin: 0;
+    }
+    .main_text__sale span {
+        font-size: 13px;
+        padding: 6px;
+        margin-right: 6px;
+    }
+    .text {
+        text-align: left;
+        padding-bottom: 35px;
+    }
+    .page_white__title {
+        font-size: 30px;
+    }
+    .page_white {
+        padding-bottom: 25px;
+    }
+    .page_gradient {
+        padding: 30px 0;
+    }
+    .form_message {
+        flex-direction: column;
+    }
+    .form_message__button {
+        margin: 10px auto 0;
     }
 }
